@@ -29,5 +29,4 @@ state(_#Rest):: lookup(var(X)) >--> Val :-
 :- dynamic put/2.                   % modifiable predicate
 
 state(S):: put(var(X),Val) >--> state((X,Val)#S).
-state(S):: put(id(X),Val) >--> state((X,Val)#S).
 
