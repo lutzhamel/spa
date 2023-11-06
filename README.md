@@ -207,7 +207,7 @@ This is done via structural induction over the expression syntax,
 :- assume syntax(e1).          % e1 is considered a syntactic structure
 :- assume _S:: e0 ==> ve0.     % for any _S the expression e0 terminates
 :- assume (S:: e1 ==> ve1 :-   % for any S the expression e1 terminates if x is defined
-      S:: lookup(var(_X)) >--> _V).
+      S:: lookup(var(x)) >--> _V).
 % induction step
 :- show 
       state(s):: let(var(x),e0,e1) ==> ve1.
@@ -319,7 +319,7 @@ The default is true.
 ## Installation and Running
 
 Make sure that you have SWI-Prolog installed (swi-prolog.org).  Then copy the files `spa.pl`
-and `xis.pl` from the `examples` folder of the SPA github project (github.com/lutzhamel/spa) 
+and `xis.pl` from the `spa` folder of the SPA github project (github.com/lutzhamel/spa) 
 to a known location, for example `spa-folder`.  Then you can start SPA in interactive mode as
 ```
 swipl -q -f ~/spa-folder/spa.pl
